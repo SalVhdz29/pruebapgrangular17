@@ -1,0 +1,104 @@
+<shared-loader [hidden]="!loadingFlg"></shared-loader>
+<p-card header="Personas">
+    <div class="grid">
+        <div class="col-12">
+            <p-button
+                (onClick)="showCreateDialog.set(true)"
+                severity="success"
+                label="Agregar Persona"
+                icon="pi pi-plus"
+            ></p-button>
+        </div>
+
+        <div class="col-12">
+            <p-table
+                [value]="listaPersonas"
+                [tableStyle]="{ 'min-width': '50rem' }"
+                [paginator]="true"
+                [rowsPerPageOptions]="[5, 10, 20]"
+                [rows]="10"
+                currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} inductores"
+                #personasTbl
+                [globalFilterFields]="[
+                    'nombre',
+                    'apellido',
+                    'fechaNacimiento',
+                    'ocupacion'
+                ]"
+            >
+            <ng-template pTemplate="caption">
+                <div class="flex">
+                    <button
+                        pButton
+                        label="Limpiar búsqueda"
+                        class="p-button-outlined"
+                        icon="pi pi-filter-slash"
+                        (click)="clear(personasTbl)"
+                    ></button>
+                    <span class="p-input-icon-left ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input
+                            #busquedaTabla
+                            pInputText
+                            type="text"
+                            (input)="
+                                personasTbl.filterGlobal(
+                                    busquedaTabla.value,
+                                    'contains'
+                                )
+                            "
+                            placeholder="Buscar"
+                        />
+                    </span>
+                </div>
+            </ng-template>
+
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Ocupación</th>
+                    <th colspan="1">Operaciones</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-persona>
+                <tr>
+                    <td>{{ persona.nombre }}</td>
+                    <td>{{ persona.apellido }}</td>
+                    <td>{{ persona.fechaNacimiento }}</td>
+                    <td>{{ persona.ocupacion }}</td>
+                    <td>
+                        <p-button
+                            pTooltip="Actualizar Persona"
+                            icon="pi pi-pencil" severity="warning"
+                            (onClick)="setPersonaSelected(persona)"
+                            [disabled]="persona!=null?false:true"/>
+                            &nbsp;
+                            <p-button
+                                pTooltip="Eliminar Persona"
+                                icon="pi pi-trash" severity="danger"
+                                (onClick)="deletePersonaSelected(persona)"
+                                [disabled]="persona!=null?false:true"/>
+                    </td>
+                </tr>
+            </ng-template>
+               
+            </p-table>
+
+            <app-create-persona
+                [showDialog]="showCreateDialog"
+                (reloadFlgs)="reloadResetCreateFlg()"
+                (resetFlgs)="showCreateDialog.set(false)"
+            />
+
+            <app-update-persona
+            [showDialog]="showUpdateDialog"
+            [persona]="persona"
+            (reloadFlgs)="reloadResetUpdFlg()"
+            (resetFlgs)="resetUpdFlg()"
+                />
+        </div>
+    </div>
+</p-card>

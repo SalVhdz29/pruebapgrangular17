@@ -1,0 +1,121 @@
+<p-card header="Costos por actividad" [style]="{ width: '1500px', height: 'auto' }">
+    <!-- <div>
+        <p><b>Favor seleccionar una misional y un departamento</b></p>
+    </div> -->
+    <div>
+        <div class="p-fluid p-formgrid grid mt-2">
+            <div class="field col-12 md:col-2">
+                <p-button
+                (onClick)="ObtenerCostos()"
+                severity="success"
+                label="Generar"
+                icon="pi pi-plus"
+            ></p-button>
+                <!-- <app-mapa-principal
+                    (departamentoClick)="departamentoSeleccionado($event)"
+                ></app-mapa-principal> -->
+            </div>
+            <!-- <div class="field col-12 md:col-4">
+                <div class="row">
+                    <span class="p-float-label">
+                        <p-dropdown
+                            #roles
+                            [ngModel]="misionalSeleccionada()"
+                            optionLabel="descripcion"
+                            (onChange)="setMisional($event.value)"
+                            inputId="misionales"
+                            id="misionales"
+                            [options]="misionalesList"
+                            [showClear]="true"
+                        ></p-dropdown>
+                        <label for="misionales"
+                            >Misional
+                            <small style="color: rgb(243, 11, 11)"><b> *</b></small></label
+                        >
+                    </span>
+                </div>
+                <br />
+                <div *ngIf="flagDatosSeleccionados" class="row">
+                    <p>
+                        Misional:
+                        <b>{{ misionalSeleccionada()?.descripcion }}</b>
+                    </p>
+                    <p>
+                        Departamento: <b>{{ nombreDepartamento() }}</b>
+                    </p>
+                </div>
+            </div> -->
+        </div>
+        <div *ngIf="flagDatosSeleccionados" class="col-12">
+            <p-table
+    [paginator]="true"
+    [rows]="5"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    [value]="listaCostosNew"
+    [tableStyle]="{ 'min-width': '150px' }"
+    #CostosTable
+    styleClass="p-datatable-gridlines" 
+    [scrollable]="true"
+>
+    <ng-template pTemplate="header">
+        <tr>
+            <th scope="col" class="th-spacing">Proceso</th>
+            <th scope="col" class="th-spacing">Actividades</th>
+            <th scope="col" class="th-spacing">Tiempo en porcentaje</th>
+            <th scope="col" class="th-spacing">Tiempo en minutos</th>
+            <th scope="col" class="th-spacing">Ahuachapán</th>
+            <th scope="col" class="th-spacing">Cabañas</th>
+            <th scope="col" class="th-spacing">Chalatenango</th>
+            <th scope="col" class="th-spacing">Cuscatlán</th>
+            <th scope="col" class="th-spacing">La Libertad</th>
+            <th scope="col" class="th-spacing">La Paz</th>
+            <th scope="col" class="th-spacing">La Unión</th>
+            <th scope="col" class="th-spacing">Morazán</th>
+            <th scope="col" class="th-spacing">San Miguel</th>
+            <th scope="col" class="th-spacing">San Salvador</th>
+            <th scope="col" class="th-spacing">San Vicente</th>
+            <th scope="col" class="th-spacing">Santa Ana</th>
+            <th scope="col" class="th-spacing">Sonsonate</th>
+            <th scope="col" class="th-spacing">Usulután</th>
+        </tr>
+    </ng-template>
+    <ng-template
+        pTemplate="body"
+        let-costos
+        let-rowIndex="rowIndex"
+        let-rowgroup="rowgroup"
+        let-rowspan="rowspan"
+    >
+        <ng-template
+            ngFor
+            let-costeo
+            [ngForOf]="costos.costeo"
+            let-i="index"
+        >
+            <tr>
+                <td>{{ costos.proceso }}</td>
+                <td>{{ costeo.actividad }}</td>
+                <td>{{ costeo.porcentajeTiempo | number : "1.2-2" }}%</td>
+                <td>{{ costeo.tiempoMinutos }}</td>
+                <td>$ {{ costeo.ahu | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.cab | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.cha | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.cus | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.lalib | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.lapaz | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.launion | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.moraza | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.sm | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.ss | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.sanvic | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.santaana | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.son | number : "1.2-2" }}</td>
+                <td>$ {{ costeo.usu | number : "1.2-2" }}</td>
+            </tr>
+        </ng-template>
+    </ng-template>
+</p-table>
+
+        </div>
+    </div>
+</p-card>

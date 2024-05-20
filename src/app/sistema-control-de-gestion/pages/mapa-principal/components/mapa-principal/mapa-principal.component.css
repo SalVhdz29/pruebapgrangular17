@@ -1,0 +1,15 @@
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: transparent; 
+  }
+  
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent; 
+  }

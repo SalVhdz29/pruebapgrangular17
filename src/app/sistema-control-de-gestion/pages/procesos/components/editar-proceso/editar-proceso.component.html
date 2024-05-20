@@ -1,0 +1,77 @@
+<shared-loader [hidden]="!showProceso"></shared-loader>
+<p-button pTooltip="Editar proceso" icon="pi pi-pencil" severity="success" (onClick)="obtenerProcesos()" [disabled]="idProceso!=null?false:true"/>
+<p-dialog
+        header="Editar proceso"
+        [(visible)]="showProcesoDialog"
+        [modal]="true"
+        [responsive]="true"
+        [style]="{ width: '600px', height: '500px' }"
+        [draggable]="false"
+        [resizable]="false"
+    >
+        <ng-template pTemplate="body">
+            <div class="p-fluid p-formgrid grid mt-2">
+                <div class="field col-12">
+                    <span class="p-float-label">
+                        <textarea
+                            rows="5"
+                            cols="30"
+                            pInputTextarea
+                            id="descripcion"
+                            [(ngModel)]="descripcionProceso"
+                        ></textarea>
+                        <label for="descripcion" class="mb-2"
+                            >Descripción
+                            <small style="color: red"><b> *</b></small></label
+                        >
+                        <!-- <input [(ngModel)]="nombreUsuarioIngresado" id="nombreUsarioInput" type="text" #nombreUsarioInput
+                            required pInputText /> -->
+                        <!-- <label for="nombreUsarioInput" class="mb-2"
+                            >Nombre de usuario
+                            <small style="color: red"><b> *</b></small></label
+                        > -->
+                    </span>
+                    <small *ngIf="(descripcionProceso==null||descripcionProceso=='')&&formularioCompleto"
+                        style="color:red"><b>Favor ingresar una descripción</b></small>
+                </div>
+                <div class="field col-12">
+                    <span class="p-float-label">
+                        <input (keyup)="setCodigo(codigoProcesoInput.value)" id="codigoProcesoInput" type="text" #codigoProcesoInput
+                            required pInputText  [value]="codigoProceso"/>
+                        <label for="codigoProcesoInput" class="mb-2"
+                            >Codigo proceso
+                            <small style="color: red"><b> *</b></small></label
+                        >
+                    </span>
+                    <small *ngIf="(codigoProceso==null ||codigoProceso== undefined || codigoProceso == '')&&formularioCompleto"
+                        style="color:red"><b>Favor ingresar un código</b></small>
+                </div>
+                <div class="field col-12">
+                    <span class="p-float-label">
+                        <input (keyup)="setTiempo(tiempoMinutosInput.value)" id="tiempoMinutosInput" type="number" #tiempoMinutosInput
+                            required pInputText [value]="tiempoMinutos"/>
+                        <label for="tiempoMinutosInput" class="mb-2"
+                            >Limite de tiempo
+                            <small style="color: red"><b> *</b></small></label
+                        >
+                    </span>
+                    <small *ngIf="(tiempoMinutos==null ||tiempoMinutos== undefined || tiempoMinutos == '')&&formularioCompleto"
+                        style="color:red"><b>Favor ingresar un limite de tiempo (en minutos)</b></small>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <p-button
+                icon="pi pi-save"
+                (click)="actualizarProceso()"
+                label="Guardar"
+                severity="success"
+            ></p-button>
+            <p-button
+                icon="pi pi-times"
+                (click)="showDialog()"
+                label="Cancelar"
+                severity="danger"
+            ></p-button>
+        </ng-template>
+    </p-dialog>

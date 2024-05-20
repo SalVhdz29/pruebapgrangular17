@@ -1,0 +1,104 @@
+<shared-loader [hidden]="!loadingFlg"></shared-loader>
+<p-card header="Empleados">
+    <div class="grid">
+        <div class="col-12">
+            <p-button
+                (onClick)="showCreateDialog.set(true)"
+                severity="success"
+                label="Agregar Empleado"
+                icon="pi pi-plus"
+            ></p-button>
+        </div>
+
+        <div class="col-12">
+            <p-table
+                [value]="listaEmpleados"
+                [tableStyle]="{ 'min-width': '50rem' }"
+                [paginator]="true"
+                [rowsPerPageOptions]="[5, 10, 20]"
+                [rows]="10"
+                currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} inductores"
+                #empleadosTbl
+                [globalFilterFields]="[
+                    'nombreEmpleado',
+                    'nombreEmpresa',
+                    'fechaContrato',
+                    'fechaFinContrato'
+                ]"
+            >
+            <ng-template pTemplate="caption">
+                <div class="flex">
+                    <button
+                        pButton
+                        label="Limpiar búsqueda"
+                        class="p-button-outlined"
+                        icon="pi pi-filter-slash"
+                        (click)="clear(empleadosTbl)"
+                    ></button>
+                    <span class="p-input-icon-left ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input
+                            #busquedaTabla
+                            pInputText
+                            type="text"
+                            (input)="
+                                empleadosTbl.filterGlobal(
+                                    busquedaTabla.value,
+                                    'contains'
+                                )
+                            "
+                            placeholder="Buscar"
+                        />
+                    </span>
+                </div>
+            </ng-template>
+
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Empleado</th>
+                    <th>Empresa</th>
+                    <th>Fecha de Contratación</th>
+                    <th>Fecha fin de contrato</th>
+                    <th colspan="1">Operaciones</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-empleado>
+                <tr>
+                    <td>{{ empleado.nombreEmpleado }}</td>
+                    <td>{{ empleado.nombreEmpresa }}</td>
+                    <td>{{ empleado.fechaContrato }}</td>
+                    <td>{{ empleado.fechaFinContrato }}</td>
+                    <td>
+                        <p-button
+                            pTooltip="Actualizar Empleado"
+                            icon="pi pi-pencil" severity="warning"
+                            (onClick)="setEmpleadoSelected(empleado)"
+                            [disabled]="empleado!=null?false:true"/>
+                            &nbsp;
+                            <p-button
+                                pTooltip="Eliminar Empleado"
+                                icon="pi pi-trash" severity="danger"
+                                (onClick)="deleteEmpleadoSelected(empleado)"
+                                [disabled]="empleado!=null?false:true"/>
+                    </td>
+                </tr>
+            </ng-template>
+               
+            </p-table>
+
+            <app-crear-empleado
+                [showDialog]="showCreateDialog"
+                (reloadFlgs)="reloadResetCreateFlg()"
+                (resetFlgs)="showCreateDialog.set(false)"
+            />
+
+            <app-update-empleado
+            [showDialog]="showUpdateDialog"
+            [empleado]="empleado"
+            (reloadFlgs)="reloadResetUpdFlg()"
+            (resetFlgs)="resetUpdFlg()"
+                /> 
+        </div>
+    </div>
+</p-card>

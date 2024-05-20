@@ -1,0 +1,15 @@
+.p-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .p-table th, .p-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .p-table th {
+    background-color: #f2f2f2;
+  }
+  

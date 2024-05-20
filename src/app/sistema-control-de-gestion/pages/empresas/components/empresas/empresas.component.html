@@ -1,0 +1,100 @@
+<shared-loader [hidden]="!loadingFlg"></shared-loader>
+<p-card header="Empresas">
+    <div class="grid">
+        <div class="col-12">
+            <p-button
+                (onClick)="showCreateDialog.set(true)"
+                severity="success"
+                label="Agregar Empresa"
+                icon="pi pi-plus"
+            ></p-button>
+        </div>
+        <div class="col-12">
+            <p-table
+                [value]="listaEmpresas"
+                [tableStyle]="{ 'min-width': '50rem' }"
+                [paginator]="true"
+                [rowsPerPageOptions]="[5, 10, 20]"
+                [rows]="10"
+                currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} inductores"
+                #empresasTbl
+                [globalFilterFields]="[
+                    'nombre',
+                    'telefono',
+                    'direccion'
+                ]"
+            >
+            <ng-template pTemplate="caption">
+                <div class="flex">
+                    <button
+                        pButton
+                        label="Limpiar búsqueda"
+                        class="p-button-outlined"
+                        icon="pi pi-filter-slash"
+                        (click)="clear(empresasTbl)"
+                    ></button>
+                    <span class="p-input-icon-left ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input
+                            #busquedaTabla
+                            pInputText
+                            type="text"
+                            (input)="
+                                empresasTbl.filterGlobal(
+                                    busquedaTabla.value,
+                                    'contains'
+                                )
+                            "
+                            placeholder="Buscar"
+                        />
+                    </span>
+                </div>
+            </ng-template>
+
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Dirección</th>
+                    <th colspan="1">Operaciones</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-empresa>
+                <tr>
+                    <td>{{ empresa.nombre }}</td>
+                    <td>{{ empresa.telefono }}</td>
+                    <td>{{ empresa.direccion }}</td>
+                    <td>
+                        <p-button
+                            pTooltip="Actualizar Empresa"
+                            icon="pi pi-pencil" severity="warning"
+                            (onClick)="setEmpresaSelected(empresa)"
+                            [disabled]="empresa!=null?false:true"/>
+                        &nbsp;
+                        <p-button
+                            pTooltip="Eliminar Empresa"
+                            icon="pi pi-trash" severity="danger"
+                            (onClick)="deleteEmpresaSelected(empresa)"
+                            [disabled]="empresa!=null?false:true"/>
+                    </td>
+                </tr>
+            </ng-template>
+               
+            </p-table>
+
+            <app-create-empresa
+                [showDialog]="showCreateDialog"
+                (reloadFlgs)="reloadResetCreateFlg()"
+                (resetFlgs)="showCreateDialog.set(false)"
+            />
+
+            <app-update-empresa
+            [showDialog]="showUpdateDialog"
+            [empresa]="empresa"
+            (reloadFlgs)="reloadResetUpdFlg()"
+            (resetFlgs)="resetUpdFlg()"
+        />
+        </div>
+    </div>
+</p-card>

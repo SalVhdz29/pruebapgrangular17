@@ -1,0 +1,7 @@
+
+<ul class="layout-menu">
+    <ng-container *ngFor="let route of userRoutes; let i = index;">
+        <li app-menuitem *ngIf="!route.separator" [item]="route" [index]="i" [root]="true"></li>
+        <li *ngIf="route.separator" class="menu-separator"></li>
+    </ng-container>
+</ul>

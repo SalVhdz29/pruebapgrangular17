@@ -1,0 +1,1696 @@
+{
+ "layers": [
+  {
+   "currentVersion": 10.41,
+   "id": 0,
+   "name": "Zonas Sísmicas",
+   "type": "Feature Layer",
+   "description": " Zonas de enjambres sísmicos por fallas locales en El Salvador ",
+   "geometryType": "esriGeometryPolygon",
+   "copyrightText": "MARN",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "uniqueValue",
+     "field1": "zona",
+     "field2": null,
+     "field3": null,
+     "fieldDelimiter": ", ",
+     "defaultSymbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.4
+      }
+     },
+     "defaultLabel": "<all other values>",
+     "uniqueValueInfos": [
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "value": "Zona 1",
+       "label": "Zona 1",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "value": "Zona 10",
+       "label": "Zona 10",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "value": "Zona 11",
+       "label": "Zona 11",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "value": "Zona 12",
+       "label": "Zona 12",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "value": "Zona 2",
+       "label": "Zona 2",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "value": "Zona 3",
+       "label": "Zona 3",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "value": "Zona 4",
+       "label": "Zona 4",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "value": "Zona 5",
+       "label": "Zona 5",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "value": "Zona 6",
+       "label": "Zona 6",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "value": "Zona 7",
+       "label": "Zona 7",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "value": "Zona 8",
+       "label": "Zona 8",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         0,
+         0,
+         0
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "value": "Zona 9",
+       "label": "Zona 9",
+       "description": ""
+      }
+     ]
+    },
+    "transparency": 0,
+    "labelingInfo": [
+     {
+      "labelPlacement": "esriServerPolygonPlacementAlwaysHorizontal",
+      "where": null,
+      "labelExpression": "[ZONASSIS]",
+      "useCodedValues": true,
+      "symbol": {
+       "type": "esriTS",
+       "color": [
+        0,
+        0,
+        0,
+        255
+       ],
+       "backgroundColor": null,
+       "borderLineColor": null,
+       "borderLineSize": null,
+       "verticalAlignment": "bottom",
+       "horizontalAlignment": "center",
+       "rightToLeft": false,
+       "angle": 0,
+       "xoffset": 0,
+       "yoffset": 0,
+       "kerning": true,
+       "haloColor": null,
+       "haloSize": null,
+       "font": {
+        "family": "Arial",
+        "size": 8,
+        "style": "normal",
+        "weight": "normal",
+        "decoration": "none"
+       }
+      },
+      "minScale": 0,
+      "maxScale": 0
+     }
+    ]
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 384164.00528173347,
+    "ymin": 209481.47065797786,
+    "xmax": 684435.9383474572,
+    "ymax": 339065.3264626671,
+    "spatialReference": {"wkt": "PROJCS[\"NAD_1927_Lambert_Conformal_Conic\",GEOGCS[\"GCS_North_American_1927\",DATUM[\"D_North_American_1927\",SPHEROID[\"Clarke_1866\",6378206.4,294.9786982]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Lambert_Conformal_Conic\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",295809.184],PARAMETER[\"Central_Meridian\",-89.0],PARAMETER[\"Standard_Parallel_1\",13.31666666666667],PARAMETER[\"Standard_Parallel_2\",14.25],PARAMETER[\"Latitude_Of_Origin\",13.78333333333333],UNIT[\"Meter\",1.0]]"}
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "ZONASSIS",
+   "typeIdField": null,
+   "fields": [
+    {
+     "name": "FID",
+     "type": "esriFieldTypeOID",
+     "alias": "FID",
+     "domain": null
+    },
+    {
+     "name": "Shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "Shape",
+     "domain": null
+    },
+    {
+     "name": "ZONASSIS",
+     "type": "esriFieldTypeString",
+     "alias": "ZONASSIS",
+     "length": 3,
+     "domain": null
+    },
+    {
+     "name": "zona",
+     "type": "esriFieldTypeString",
+     "alias": "zona",
+     "length": 10,
+     "domain": null
+    }
+   ],
+   "indexes": [
+    {
+     "name": "Shape",
+     "fields": "Shape",
+     "isAscending": true,
+     "isUnique": false,
+     "description": ""
+    }
+   ],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": true,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": false,
+   "supportsAdvancedQueries": false,
+   "supportedQueryFormats": "JSON, AMF, geoJSON",
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": false,
+    "supportsOrderBy": false,
+    "supportsDistinct": false,
+    "supportsPagination": false,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true
+   }
+  },
+  {
+   "currentVersion": 10.41,
+   "id": 1,
+   "name": "Ubicación a deslizamientos",
+   "type": "Feature Layer",
+   "description": "Ubicación de ocurrencia a deslizamientos en El Salvador 1774 hasta 2012",
+   "geometryType": "esriGeometryPoint",
+   "copyrightText": "MARN",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "simple",
+     "symbol": {
+      "type": "esriPMS",
+      "url": "a7e6de6f29c1153a44bc70792aea7615",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAFxJREFUCJllyLEJg1AUAMATHkiGUIcxKRKEDOEQbmLjGKawETJGNghkg1/IT2EjeOUFZGpc8cVSkCOXZSulGRe7V+YZGA8JHe4hpcZZFVjxOOSGd6DHhBt+GAo+f1bnE7xAmFgSAAAAAElFTkSuQmCC",
+      "contentType": "image/png",
+      "width": 4,
+      "height": 4,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 0
+     },
+     "label": "",
+     "description": ""
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 402498.5909219267,
+    "ymin": 239510.64841188455,
+    "xmax": 626591.139148861,
+    "ymax": 365237.3096805584,
+    "spatialReference": {"wkt": "PROJCS[\"NAD_1927_Lambert_Conformal_Conic\",GEOGCS[\"GCS_North_American_1927\",DATUM[\"D_North_American_1927\",SPHEROID[\"Clarke_1866\",6378206.4,294.9786982]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Lambert_Conformal_Conic\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",295809.184],PARAMETER[\"Central_Meridian\",-89.0],PARAMETER[\"Standard_Parallel_1\",13.31666666666667],PARAMETER[\"Standard_Parallel_2\",14.25],PARAMETER[\"Latitude_Of_Origin\",13.78333333333333],UNIT[\"Meter\",1.0]]"}
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "F3",
+   "typeIdField": null,
+   "fields": [
+    {
+     "name": "FID",
+     "type": "esriFieldTypeOID",
+     "alias": "FID",
+     "domain": null
+    },
+    {
+     "name": "Shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "Shape",
+     "domain": null
+    },
+    {
+     "name": "F1",
+     "type": "esriFieldTypeDouble",
+     "alias": "F1",
+     "domain": null
+    },
+    {
+     "name": "F2",
+     "type": "esriFieldTypeDate",
+     "alias": "F2",
+     "length": 8,
+     "domain": null
+    },
+    {
+     "name": "F3",
+     "type": "esriFieldTypeString",
+     "alias": "F3",
+     "length": 254,
+     "domain": null
+    },
+    {
+     "name": "F4",
+     "type": "esriFieldTypeString",
+     "alias": "F4",
+     "length": 254,
+     "domain": null
+    },
+    {
+     "name": "F5",
+     "type": "esriFieldTypeString",
+     "alias": "F5",
+     "length": 254,
+     "domain": null
+    },
+    {
+     "name": "F6",
+     "type": "esriFieldTypeDate",
+     "alias": "F6",
+     "length": 8,
+     "domain": null
+    },
+    {
+     "name": "F7",
+     "type": "esriFieldTypeDouble",
+     "alias": "F7",
+     "domain": null
+    },
+    {
+     "name": "F8",
+     "type": "esriFieldTypeDouble",
+     "alias": "F8",
+     "domain": null
+    },
+    {
+     "name": "F9",
+     "type": "esriFieldTypeDouble",
+     "alias": "F9",
+     "domain": null
+    },
+    {
+     "name": "F10",
+     "type": "esriFieldTypeDouble",
+     "alias": "F10",
+     "domain": null
+    },
+    {
+     "name": "F11",
+     "type": "esriFieldTypeDouble",
+     "alias": "F11",
+     "domain": null
+    },
+    {
+     "name": "F12",
+     "type": "esriFieldTypeDouble",
+     "alias": "F12",
+     "domain": null
+    },
+    {
+     "name": "F13",
+     "type": "esriFieldTypeDouble",
+     "alias": "F13",
+     "domain": null
+    },
+    {
+     "name": "F14",
+     "type": "esriFieldTypeDouble",
+     "alias": "F14",
+     "domain": null
+    },
+    {
+     "name": "X",
+     "type": "esriFieldTypeDouble",
+     "alias": "X",
+     "domain": null
+    },
+    {
+     "name": "Y",
+     "type": "esriFieldTypeDouble",
+     "alias": "Y",
+     "domain": null
+    }
+   ],
+   "indexes": [
+    {
+     "name": "Shape",
+     "fields": "Shape",
+     "isAscending": true,
+     "isUnique": false,
+     "description": ""
+    }
+   ],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": false,
+   "supportsAdvancedQueries": false,
+   "supportedQueryFormats": "JSON, AMF, geoJSON",
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": false,
+    "supportsOrderBy": false,
+    "supportsDistinct": false,
+    "supportsPagination": false,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true
+   },
+   "dateFieldsTimeReference": null
+  },
+  {
+   "currentVersion": 10.41,
+   "id": 2,
+   "name": "Municipios vulnerables ante amenaza de Tsunamis",
+   "type": "Feature Layer",
+   "description": "Evaluación del riesgo por tsunami en la costa de El Salvador,  Fase II: Vulnerabilidad y riesgo,",
+   "geometryType": "esriGeometryPolygon",
+   "copyrightText": " Instituto de hidráulica ambiental de cantabria (IHCantabria) y Ministerio de Medio Ambiente y Recursos Naturales de El Salvador MARN 2012",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "uniqueValue",
+     "field1": "gridcode",
+     "field2": null,
+     "field3": null,
+     "fieldDelimiter": ", ",
+     "defaultSymbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "width": 0.4
+      }
+     },
+     "defaultLabel": "<all other values>",
+     "uniqueValueInfos": [
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         56,
+         168,
+         0,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "1",
+       "label": "Muy baja",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         209,
+         255,
+         115,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "2",
+       "label": "Baja",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         255,
+         255,
+         0,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "3",
+       "label": "Media",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         255,
+         170,
+         0,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "4",
+       "label": "Alta",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         230,
+         0,
+         0,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "5",
+       "label": "Muy Alta",
+       "description": ""
+      }
+     ]
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 377431.0687498372,
+    "ymin": 226450.39550775627,
+    "xmax": 642661.8281251581,
+    "ymax": 306782.5562501956,
+    "spatialReference": {"wkt": "PROJCS[\"NAD_1927_Lambert_Conformal_Conic\",GEOGCS[\"GCS_North_American_1927\",DATUM[\"D_North_American_1927\",SPHEROID[\"Clarke_1866\",6378206.4,294.9786982]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Lambert_Conformal_Conic\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",295809.184],PARAMETER[\"Central_Meridian\",-89.0],PARAMETER[\"Standard_Parallel_1\",13.31666666666667],PARAMETER[\"Standard_Parallel_2\",14.25],PARAMETER[\"Latitude_Of_Origin\",13.78333333333333],UNIT[\"Meter\",1.0]]"}
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "Id",
+   "typeIdField": null,
+   "fields": [
+    {
+     "name": "FID",
+     "type": "esriFieldTypeOID",
+     "alias": "FID",
+     "domain": null
+    },
+    {
+     "name": "Shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "Shape",
+     "domain": null
+    },
+    {
+     "name": "Id",
+     "type": "esriFieldTypeInteger",
+     "alias": "Id",
+     "domain": null
+    },
+    {
+     "name": "gridcode",
+     "type": "esriFieldTypeInteger",
+     "alias": "gridcode",
+     "domain": null
+    }
+   ],
+   "indexes": [
+    {
+     "name": "Shape",
+     "fields": "Shape",
+     "isAscending": true,
+     "isUnique": false,
+     "description": ""
+    }
+   ],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": false,
+   "supportsAdvancedQueries": false,
+   "supportedQueryFormats": "JSON, AMF, geoJSON",
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": false,
+    "supportsOrderBy": false,
+    "supportsDistinct": false,
+    "supportsPagination": false,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true
+   }
+  },
+  {
+   "currentVersion": 10.41,
+   "id": 3,
+   "name": "Suceptibilidad a inundaciones ",
+   "type": "Feature Layer",
+   "description": "Suceptibilidad a inundaciones ",
+   "geometryType": "esriGeometryPolygon",
+   "copyrightText": "MARN",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "uniqueValue",
+     "field1": "TIPO_INUND",
+     "field2": null,
+     "field3": null,
+     "fieldDelimiter": ", ",
+     "defaultSymbol": null,
+     "defaultLabel": null,
+     "uniqueValueInfos": [
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         190,
+         210,
+         255,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSNull",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0
+        }
+       },
+       "value": "Moderada",
+       "label": "Moderada",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         158,
+         170,
+         215,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSNull",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0
+        }
+       },
+       "value": "Alta",
+       "label": "Alta",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         102,
+         119,
+         205,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSNull",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0
+        }
+       },
+       "value": "Muy alta",
+       "label": "Muy alta",
+       "description": ""
+      }
+     ]
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 377415.96868896263,
+    "ymin": 226447.6562499922,
+    "xmax": 639627.2500000133,
+    "ymax": 362500.3125000108,
+    "spatialReference": {"wkt": "PROJCS[\"NAD_1927_Lambert_Conformal_Conic\",GEOGCS[\"GCS_North_American_1927\",DATUM[\"D_North_American_1927\",SPHEROID[\"Clarke_1866\",6378206.4,294.9786982]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Lambert_Conformal_Conic\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",295809.184],PARAMETER[\"Central_Meridian\",-89.0],PARAMETER[\"Standard_Parallel_1\",13.31666666666667],PARAMETER[\"Standard_Parallel_2\",14.25],PARAMETER[\"Latitude_Of_Origin\",13.78333333333333],UNIT[\"Meter\",1.0]]"}
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "TIPO_INUND",
+   "typeIdField": null,
+   "fields": [
+    {
+     "name": "FID",
+     "type": "esriFieldTypeOID",
+     "alias": "FID",
+     "domain": null
+    },
+    {
+     "name": "Shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "Shape",
+     "domain": null
+    },
+    {
+     "name": "AREA",
+     "type": "esriFieldTypeSingle",
+     "alias": "AREA",
+     "domain": null
+    },
+    {
+     "name": "TIPO_INUND",
+     "type": "esriFieldTypeString",
+     "alias": "TIPO_INUND",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "PERIMETER",
+     "type": "esriFieldTypeSingle",
+     "alias": "PERIMETER",
+     "domain": null
+    }
+   ],
+   "indexes": [
+    {
+     "name": "Shape",
+     "fields": "Shape",
+     "isAscending": true,
+     "isUnique": false,
+     "description": ""
+    }
+   ],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": false,
+   "supportsAdvancedQueries": false,
+   "supportedQueryFormats": "JSON, AMF, geoJSON",
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": false,
+    "supportsOrderBy": false,
+    "supportsDistinct": false,
+    "supportsPagination": false,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true
+   }
+  },
+  {
+   "currentVersion": 10.41,
+   "id": 4,
+   "name": "Amenaza Tsunamis",
+   "type": "Raster Layer",
+   "description": "Evaluación del riesgo por tsunami en la costa de El Salvador,  Fase II: Vulnerabilidad y riesgo,",
+   "geometryType": null,
+   "copyrightText": " Instituto de hidráulica ambiental de cantabria (IHCantabria) y Ministerio de Medio Ambiente y Recursos Naturales de El Salvador MARN 2012",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 377425.9687499489,
+    "ymin": 226447.65624624828,
+    "xmax": 642665.9687501357,
+    "ymax": 355347.6562464122,
+    "spatialReference": {"wkt": "PROJCS[\"NAD_1927_Lambert_Conformal_Conic\",GEOGCS[\"GCS_North_American_1927\",DATUM[\"D_North_American_1927\",SPHEROID[\"Clarke_1866\",6378206.4,294.9786982]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Lambert_Conformal_Conic\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",295809.184],PARAMETER[\"Central_Meridian\",-89.0],PARAMETER[\"Standard_Parallel_1\",13.31666666666667],PARAMETER[\"Standard_Parallel_2\",14.25],PARAMETER[\"Latitude_Of_Origin\",13.78333333333333],UNIT[\"Meter\",1.0]]"}
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeNone",
+   "displayField": "",
+   "typeIdField": null,
+   "fields": null,
+   "indexes": [],
+   "relationships": [],
+   "canModifyLayer": false,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query",
+   "supportsStatistics": false,
+   "supportsAdvancedQueries": false,
+   "supportedQueryFormats": "JSON, AMF, geoJSON",
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": false,
+    "supportsOrderBy": false,
+    "supportsDistinct": false,
+    "supportsPagination": false,
+    "supportsTrueCurve": false,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true
+   }
+  },
+  {
+   "currentVersion": 10.41,
+   "id": 5,
+   "name": "Amenaza sísmica retorno 500 años",
+   "type": "Feature Layer",
+   "description": "Amenaza sísmica de El Salvador en términos de PGA (gal) para períoso de retorno PR=500 años ",
+   "geometryType": "esriGeometryPolygon",
+   "copyrightText": "Marroquin G. y Benito (2009) Evaluación de la amenaza sísmica en El Salvador, Informe nacional derivado del estudio RESIS II",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "uniqueValue",
+     "field1": "PGA_gal",
+     "field2": null,
+     "field3": null,
+     "fieldDelimiter": ", ",
+     "defaultSymbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "width": 0.4
+      }
+     },
+     "defaultLabel": "<all other values>",
+     "uniqueValueInfos": [
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         112,
+         153,
+         89,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "width": 0.4
+        }
+       },
+       "value": " ",
+       "label": " ",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         255,
+         235,
+         190,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "De 350 a 380 (Gal)",
+       "label": "De 350 a 380 (Gal)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         242,
+         238,
+         162,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "De 380 a 410 (Gal)",
+       "label": "De 380 a 410 (Gal)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         242,
+         224,
+         150,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "De 410 a 440 (Gal)",
+       "label": "De 410 a 440 (Gal)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         242,
+         206,
+         133,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "De 440 a 470 (Gal)",
+       "label": "De 440 a 470 (Gal)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         217,
+         169,
+         130,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "De 470 a 500 (Gal)",
+       "label": "De 470 a 500 (Gal)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         194,
+         140,
+         124,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "De 500 a 530 (Gal)",
+       "label": "De 500 a 530 (Gal)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         115,
+         76,
+         0,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "Mayor que 530 (Gal)",
+       "label": "Mayor que 530 (Gal)",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         205,
+         137,
+         102,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "Menor que 350 (Gal)",
+       "label": "Menor que 350 (Gal)",
+       "description": ""
+      }
+     ]
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 377425.968750002,
+    "ymin": 226448.12499630044,
+    "xmax": 642661.5000000173,
+    "ymax": 369537.9999963265,
+    "spatialReference": {"wkt": "PROJCS[\"NAD_1927_Lambert_Conformal_Conic\",GEOGCS[\"GCS_North_American_1927\",DATUM[\"D_North_American_1927\",SPHEROID[\"Clarke_1866\",6378206.4,294.9786982]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Lambert_Conformal_Conic\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",295809.184],PARAMETER[\"Central_Meridian\",-89.0],PARAMETER[\"Standard_Parallel_1\",13.31666666666667],PARAMETER[\"Standard_Parallel_2\",14.25],PARAMETER[\"Latitude_Of_Origin\",13.78333333333333],UNIT[\"Meter\",1.0]]"}
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "PGA_gal",
+   "typeIdField": null,
+   "fields": [
+    {
+     "name": "FID",
+     "type": "esriFieldTypeOID",
+     "alias": "FID",
+     "domain": null
+    },
+    {
+     "name": "Shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "Shape",
+     "domain": null
+    },
+    {
+     "name": "PGA_gal",
+     "type": "esriFieldTypeString",
+     "alias": "PGA_gal",
+     "length": 50,
+     "domain": null
+    },
+    {
+     "name": "Amenaza",
+     "type": "esriFieldTypeString",
+     "alias": "Amenaza",
+     "length": 50,
+     "domain": null
+    }
+   ],
+   "indexes": [
+    {
+     "name": "Shape",
+     "fields": "Shape",
+     "isAscending": true,
+     "isUnique": false,
+     "description": ""
+    }
+   ],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": false,
+   "supportsAdvancedQueries": false,
+   "supportedQueryFormats": "JSON, AMF, geoJSON",
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": false,
+    "supportsOrderBy": false,
+    "supportsDistinct": false,
+    "supportsPagination": false,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true
+   }
+  },
+  {
+   "currentVersion": 10.41,
+   "id": 6,
+   "name": "Máximas intensidades sísmicas observadas",
+   "type": "Feature Layer",
+   "description": "",
+   "geometryType": "esriGeometryPolygon",
+   "copyrightText": "",
+   "parentLayer": null,
+   "subLayers": [],
+   "minScale": 0,
+   "maxScale": 0,
+   "drawingInfo": {
+    "renderer": {
+     "type": "uniqueValue",
+     "field1": "Intensidad",
+     "field2": null,
+     "field3": null,
+     "fieldDelimiter": ", ",
+     "defaultSymbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "width": 0.4
+      }
+     },
+     "defaultLabel": "<all other values>",
+     "uniqueValueInfos": [
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         112,
+         153,
+         89,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "VI",
+       "label": "VI",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         242,
+         206,
+         133,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "VII",
+       "label": "VII",
+       "description": ""
+      },
+      {
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         115,
+         76,
+         0,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "width": 0.4
+        }
+       },
+       "value": "VIII",
+       "label": "VIII",
+       "description": ""
+      }
+     ]
+    },
+    "transparency": 0,
+    "labelingInfo": null
+   },
+   "defaultVisibility": true,
+   "extent": {
+    "xmin": 377578.7111999972,
+    "ymin": 226505.64879630844,
+    "xmax": 642687.1050000126,
+    "ymax": 369608.67469632963,
+    "spatialReference": {"wkt": "PROJCS[\"NAD_1927_Lambert_Conformal_Conic\",GEOGCS[\"GCS_North_American_1927\",DATUM[\"D_North_American_1927\",SPHEROID[\"Clarke_1866\",6378206.4,294.9786982]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Lambert_Conformal_Conic\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",295809.184],PARAMETER[\"Central_Meridian\",-89.0],PARAMETER[\"Standard_Parallel_1\",13.31666666666667],PARAMETER[\"Standard_Parallel_2\",14.25],PARAMETER[\"Latitude_Of_Origin\",13.78333333333333],UNIT[\"Meter\",1.0]]"}
+   },
+   "hasAttachments": false,
+   "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+   "displayField": "Intensidad",
+   "typeIdField": null,
+   "fields": [
+    {
+     "name": "FID",
+     "type": "esriFieldTypeOID",
+     "alias": "FID",
+     "domain": null
+    },
+    {
+     "name": "Shape",
+     "type": "esriFieldTypeGeometry",
+     "alias": "Shape",
+     "domain": null
+    },
+    {
+     "name": "OBJECTID",
+     "type": "esriFieldTypeInteger",
+     "alias": "OBJECTID",
+     "domain": null
+    },
+    {
+     "name": "Shape_Leng",
+     "type": "esriFieldTypeDouble",
+     "alias": "Shape_Leng",
+     "domain": null
+    },
+    {
+     "name": "Shape_Area",
+     "type": "esriFieldTypeDouble",
+     "alias": "Shape_Area",
+     "domain": null
+    },
+    {
+     "name": "Intensidad",
+     "type": "esriFieldTypeString",
+     "alias": "Intensidad",
+     "length": 4,
+     "domain": null
+    }
+   ],
+   "indexes": [
+    {
+     "name": "Shape",
+     "fields": "Shape",
+     "isAscending": true,
+     "isUnique": false,
+     "description": ""
+    }
+   ],
+   "relationships": [],
+   "canModifyLayer": true,
+   "canScaleSymbols": false,
+   "hasLabels": false,
+   "capabilities": "Map,Query,Data",
+   "maxRecordCount": 1000,
+   "supportsStatistics": false,
+   "supportsAdvancedQueries": false,
+   "supportedQueryFormats": "JSON, AMF, geoJSON",
+   "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+   "useStandardizedQueries": true,
+   "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": false,
+    "supportsOrderBy": false,
+    "supportsDistinct": false,
+    "supportsPagination": false,
+    "supportsTrueCurve": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true
+   }
+  }
+ ],
+ "tables": []
+}

@@ -1,0 +1,129 @@
+<p-card header="Cargar datos">
+    <p-dialog header="Agregar datos" [(visible)]="showModalCargarDatos" [modal]="true"
+    [responsive]="true"
+        [style]="{ width: '900px', height: '900px'}" [draggable]="false" [resizable]="false">
+        <ng-template pTemplate="body">
+            <div class="p-fluid p-formgrid grid mt-2">
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <textarea [required]="true" [autofocus]="true" #DireccionInput [(ngModel)]="direccionIngresada"
+                            id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+                        <label for="float-input">Dirección <small style="color:red"><b>*</b></small></label>
+                    </span>
+                    <small *ngIf="(direccionIngresada==null||direccionIngresada=='')&&formularioCompleto"
+                        style="color:red"><b>Favor ingresar la dirección</b></small>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <div class="row">
+                        <p-calendar [maxDate]="maxDate" [(ngModel)]="fechaDePagoIngresada" [showIcon]="true"></p-calendar>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <span class="p-float-label">
+                            <input [(ngModel)]="numeroReciboIngresado" id="numeroReciboInput" type="text" #numeroReciboInput
+                                required pInputText />
+                            <label for="numeroReciboInput" class="mb-2">Número de recibo <small style="color:red"><b>
+                                        *</b></small></label>
+                        </span>
+                        <small *ngIf="(numeroReciboIngresado==null||numeroReciboIngresado=='')&&formularioCompleto"
+                            style="color:red"><b>Favor ingresar el número de recibo</b></small>
+                    </div>
+                </div>
+            </div>
+            <div class="p-fluid p-formgrid grid mt-2">
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <p-dropdown appendTo="body" #tipoRecibos [ngModel]="tipoReciboSeleccionado" optionLabel="descripcion"
+                            (onChange)="setTipoRecibo($event.value)" inputId="tipoRecibos" id="tipoRecibos"
+                            [options]="tipoRecibosList" [showClear]="true"></p-dropdown>
+                        <label for="tipoRecibos">Tipo de recibo <small style="color:red"><b> *</b></small></label>
+                        <small *ngIf="tipoReciboSeleccionado==null&&formularioCompleto" style="color:red"><b>Favor
+                                seleccionar un tipo de recibo</b></small>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6">
+                        <span class="p-float-label">
+                            <input id="montoReciboInput" type="number" #montoReciboInput [(ngModel)]="montoIngresado" required
+                                pInputText />
+                            <label for="montoReciboInput" class="mb-2">Monto $<small style="color:red"><b> *</b></small></label>
+                        </span>
+                        <small *ngIf="montoIngresado==null&&formularioCompleto" style="color:red"><b>Favor ingresar el monto del
+                                recibo</b></small>
+                </div>
+            </div>
+            <div class="p-fluid p-formgrid grid mt-2">
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label" >
+                    <p-dropdown appendTo="float" styleClass="showAbove" #dropMisional [ngModel]="misionalSeleccionada" optionLabel="descripcion" inputId="misionales"
+                        (onChange)="setMisional($event.value)" id="misionales" [options]="misionalList" [showClear]="true"></p-dropdown>
+                        <label for="misionales">Unidades misional <small style="color:red"><b> *</b></small></label>
+                    <small *ngIf="misionalSeleccionada==null&&formularioCompleto" style="color:red"><b>Favor seleccionar una
+                           unidad misional</b></small>
+                    </span>
+                </div>
+                <div class="field col-12 md:col-6" id="float">
+                    <span class="p-float-label">
+                        <p-dropdown #dropRecurso [ngModel]="departamentoSeleccionado" optionLabel="descripcion" inputId="recursoList"
+                        (onChange)="setRecurso($event.value)" id="recursoList" [options]="recursosList"
+                        [showClear]="true"></p-dropdown>
+                        <label for="recursoList">Recurso <small style="color:red"><b> *</b></small></label>
+                    <small *ngIf="recursoSeleccionado==null&&formularioCompleto" style="color:red"><b>Favor seleccionar
+                            un recurso</b></small>
+                    </span>
+                </div>
+            </div>
+            <div class="p-fluid p-formgrid grid mt-2">
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label" >
+                        <p-dropdown styleClass="showAbove" #dropDepartamento [ngModel]="departamentoSeleccionado" optionLabel="descripcion" inputId="departamentoList"
+                        (onChange)="setDepartamento($event.value)" id="departamentoList" [options]="departamentoList"
+                        [showClear]="true"></p-dropdown>
+                        <label for="departamentoList">Departamentos <small style="color:red"><b> *</b></small></label>
+                    <small *ngIf="departamentoSeleccionado==null&&formularioCompleto" style="color:red"><b>Favor seleccionar
+                            un departamento</b></small>
+                    </span>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <p-button icon="pi pi-save" (click)="agregarDatos()" label="Cargar" severity="success"></p-button>
+            <p-button icon="pi pi-times" (click)="showDialog()" label="Cancelar" severity="danger"></p-button>
+        </ng-template>
+    </p-dialog>
+    <div class="grid">
+        <div class="col-12">
+            <p-button (onClick)="showDialog()" severity="success" label="Agregar datos"
+                icon="pi pi-plus"></p-button>
+        </div>
+        <div class="col-12">
+            <p-table [value]="CargarDatosList" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Dirección</th>
+                        <th>Número de recibo</th>
+                        <th>Monto</th>
+                        <th>Fecha de pago</th>
+                        <th>Unidad misional</th>
+                        <th>Tipo de recibo</th>
+                        <th>Recurso</th>
+                        <th>Usuario</th>
+                        <th>Departamento</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-datos>
+                    <tr>
+                        <td>{{ datos.direccion }}</td>
+                        <td>{{ datos.numeroRecibo }}</td>
+                        <td>$ {{ datos.monto }}</td>
+                        <td>{{ datos.fechaPago | date }}</td>
+                        <td>{{ datos.misional.descripcion }}</td>
+                        <td>{{ datos.tipoRecibo.descripcion }}</td>
+                        <td>{{ datos.recurso }}</td>
+                        <td>{{ datos.usuario }}</td>
+                        <td>{{ datos.departamento.descripcion }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</p-card>

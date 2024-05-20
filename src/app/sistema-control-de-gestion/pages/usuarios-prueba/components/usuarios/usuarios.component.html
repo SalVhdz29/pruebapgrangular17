@@ -1,0 +1,91 @@
+<shared-loader [hidden]="!loadingFlg"></shared-loader>
+<p-card header="Usuarios">
+    <div class="grid">
+        <div class="col-12">
+            <p-button
+                (onClick)="showCreateDialog"
+                severity="success"
+                label="Agregar Usuario"
+                icon="pi pi-plus"
+            ></p-button>
+        </div>
+        <div class="col-12">
+            <p-table
+                [value]="usuarioListTbl"
+                [tableStyle]="{ 'min-width': '50rem' }"
+                [paginator]="true"
+                [rowsPerPageOptions]="[5, 10, 20]"
+                [rows]="10"
+                currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} inductores"
+                #usuariosTbl
+                [globalFilterFields]="[
+                    'nombre',
+                    'email',
+                    'username',
+                    'phone'
+                ]"
+            >
+                <ng-template pTemplate="caption">
+                    <div class="flex">
+                        <button
+                            pButton
+                            label="Limpiar búsqueda"
+                            class="p-button-outlined"
+                            icon="pi pi-filter-slash"
+                            (click)="clear(usuariosTbl)"
+                        ></button>
+                        <span class="p-input-icon-left ml-auto">
+                            <i class="pi pi-search"></i>
+                            <input
+                                #busquedaTabla
+                                pInputText
+                                type="text"
+                                (input)="
+                                    usuariosTbl.filterGlobal(
+                                        busquedaTabla.value,
+                                        'contains'
+                                    )
+                                "
+                                placeholder="Buscar"
+                            />
+                        </span>
+                    </div>
+                </ng-template>
+
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Nombres</th>
+                        <th>EMAIL</th>
+                        <th>username</th>
+                        <th>Telefono</th>
+                        <th colspan="1">Operaciones</th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-usuario>
+                    <tr>
+                        <td>{{ usuario.nombre }}</td>
+                        <td>{{ usuario.email }}</td>
+                        <td>{{ usuario.username }}</td>
+                        <td>{{ usuario.phone }}</td>
+                        <td>
+                            <p-button
+                                pTooltip="Actualizar Usuario"
+                                icon="pi pi-pencil" severity="warning"
+                                (onClick)="setUserSelected(usuario)"
+                                [disabled]="usuario!=null?false:true"/>
+                        </td>
+
+                    </tr>
+                </ng-template>
+
+            </p-table>
+        </div>
+    </div>
+
+    <app-update-user
+        [usuario]="usuarioChoose"
+        (actualizarPadre)="obtenerUsuarios()"
+        [showDialog]="showUpdateDialog"
+    />
+</p-card>

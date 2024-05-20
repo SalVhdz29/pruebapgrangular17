@@ -1,0 +1,64 @@
+<p-dialog
+        header="Actualizar Persona"
+        [(visible)]="showDialog"
+        [modal]="true"
+        [responsive]="true"
+        [style]="{ width: '800px', height: '600px' }"
+        [draggable]="false"
+        [resizable]="false"
+>
+
+<ng-template pTemplate="body">
+    <div class="p-fluid p-formgrid grid mt-2">
+
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <input [(ngModel)]="nombre" id="nombreIpt" type="text" #nombrePersonaIpt
+                    required pInputText />
+                <label for="nombrePersonaIpt" class="mb-2">Nombre <small style="color:red"><b>
+                            *</b></small></label>
+            </span>
+            <small *ngIf="(nombre==null||nombre=='')"
+                style="color:red"><b>Favor ingresar Nombre</b></small>
+        </div>
+
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <input [(ngModel)]="apellido" id="apellidoIpt" type="text" #apellidoPersonaIpt
+                    required pInputText />
+                <label for="apellidoPersonaIpt" class="mb-2">Apellido <small style="color:red"><b>
+                            *</b></small></label>
+            </span>
+            <small *ngIf="(apellido==null||apellido=='')"
+                style="color:red"><b>Favor ingresar Apellido</b></small>
+        </div>
+
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <input [(ngModel)]="ocupacion" id="ocupacionIpt" type="text" #ocupacionPersonaIpt
+                    required pInputText />
+                <label for="ocupacionPersonaIpt" class="mb-2">Ocupación <small style="color:red"><b>
+                            *</b></small></label>
+            </span>
+            <small *ngIf="(apellido==null||apellido=='')"
+                style="color:red"><b>Favor ingresar la Ocupación</b></small>
+        </div>
+
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <p-calendar [(ngModel)]="fecha_nacimiento"></p-calendar>
+                <label for="ocupacionPersonaIpt" class="mb-2">Fecha de Nacimiento <small style="color:red"><b>
+                            *</b></small></label>
+            </span>
+            <small *ngIf="(fecha_nacimiento==null)"
+                style="color:red"><b>Favor ingresar la Fecha de Nacimiento</b></small>
+        </div>
+
+    </div>
+</ng-template>
+
+<ng-template pTemplate="footer">
+    <p-button icon="pi pi-save" (click)="agregarPersona()" label="Actualizar" severity="success"></p-button>
+    <p-button icon="pi pi-times" (click)="resetFlgs.emit()" label="cancelar" severity="danger"></p-button>
+</ng-template>
+</p-dialog>

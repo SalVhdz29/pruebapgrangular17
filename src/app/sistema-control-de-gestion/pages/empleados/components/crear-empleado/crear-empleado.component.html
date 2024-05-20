@@ -1,0 +1,84 @@
+<p-dialog
+        header="Crear Empleado"
+        [(visible)]="showDialog"
+        [modal]="true"
+        [responsive]="true"
+        [style]="{ width: '800px', height: '600px' }"
+        [draggable]="false"
+        [resizable]="false"
+>
+<ng-template pTemplate="body">
+    <div class="p-fluid p-formgrid grid mt-2">
+
+        <div class="field col-12">
+            <p-dropdown
+               id="personaDrop"
+               #categoryDrop
+               [options]="listaPersonas"
+               optionLabel="nombre"
+               [showClear]="true"
+               placeholder="Seleccione una Persona"
+               [(ngModel)]="persona"
+               [style]="{ 'min-width': '500px' }"
+           >
+           </p-dropdown>
+           <small
+               *ngIf="
+                   (persona == null ||
+                   persona == undefined)
+               "
+               style="color: red"
+               ><b>Favor seleccione una persona</b></small
+           >
+       </div>
+
+        <div class="field col-12">
+             <p-dropdown
+                id="empresasDrop"
+                #categoryDrop
+                [options]="listaEmpresas"
+                optionLabel="nombre"
+                [showClear]="true"
+                placeholder="Seleccione una Empresa"
+                [(ngModel)]="empresa"
+                [style]="{ 'min-width': '500px' }"
+            >
+            </p-dropdown>
+            <small
+                *ngIf="
+                    (empresa == null ||
+                    empresa == undefined)
+                "
+                style="color: red"
+                ><b>Favor seleccione una empresa</b></small
+            >
+        </div>
+
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <p-calendar [(ngModel)]="fecha_contrato"></p-calendar>
+                <label for="fechaContratacionLvl" class="mb-2">Fecha de Contratación <small style="color:red"><b>
+                            *</b></small></label>
+            </span>
+            <small *ngIf="(fecha_contrato==null)"
+                style="color:red"><b>Favor ingresar la Fecha de Contratación</b></small>
+        </div>
+
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <p-calendar [(ngModel)]="fecha_fin_contrato"></p-calendar>
+                <label for="fechaFinLvl" class="mb-2">Fecha de Fin de contrato <small style="color:red"><b>
+                            *</b></small></label>
+            </span>
+            <small *ngIf="(fecha_contrato==null)"
+                style="color:red"><b>Favor ingresar la Fecha de finalización del contrato</b></small>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template pTemplate="footer">
+    <p-button icon="pi pi-save" (click)="agregarEmpleado()" label="Crear" severity="success"></p-button>
+    <p-button icon="pi pi-times" (click)="resetFlgs.emit()" label="cancelar" severity="danger"></p-button>
+</ng-template>
+
+</p-dialog>

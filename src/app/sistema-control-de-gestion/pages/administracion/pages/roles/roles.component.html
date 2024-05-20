@@ -1,0 +1,55 @@
+<p-card header="Roles">
+    <p-dialog header="Agregar rol" [(visible)]="showRolDialog" [modal]="true"
+    [responsive]="true"
+        [style]="{ width: '500px', height: '300px'}" [draggable]="false" [resizable]="false">
+        <ng-template pTemplate="body">
+            <div class="p-fluid p-formgrid grid mt-2">
+                <div class="field col-12 md:col-6">
+                    <span class="p-float-label">
+                        <input [(ngModel)]="nombreRolIngresado" id="nombreRol" type="text" #nombreRol
+                            required pInputText />
+                        <label for="nombreRol" class="mb-2">Nombre rol <small style="color:red"><b>
+                                    *</b></small></label>
+                    </span>
+                    <small *ngIf="(nombreRolIngresado==null||nombreRolIngresado=='')&&formularioCompleto"
+                        style="color:red"><b>Favor ingresar un nombre de rol</b></small>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <p-inputSwitch [(ngModel)]="estadoRolIngresado" inputId="estado"></p-inputSwitch>
+                    &nbsp;
+                    <label>{{estadoRolIngresado?'Activo':'Inactivo'}}</label>
+                        <small *ngIf="estadoRolIngresado==null&&formularioCompleto" style="color:red"><b>Favor
+                                seleccionar un rol</b></small>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <p-button icon="pi pi-save" (click)="agregarRol()" label="Cargar" severity="success"></p-button>
+            <p-button icon="pi pi-times" (click)="showDialog()" label="cancelar" severity="danger"></p-button>
+        </ng-template>
+    </p-dialog>
+    <div class="grid">
+        <div class="col-12">
+            <p-button (onClick)="showDialog()" severity="success" label="Agregar rol"
+                icon="pi pi-plus"></p-button>
+        </div>
+        <div class="col-12">
+            <p-table [value]="rolesList" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Nombre rol</th>
+                        <th>Estado</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rol>
+                    <tr>
+                        <td>{{ rol.descripcion }}</td>
+                        <td>
+                            <p-tag [severity]="rol.estado?'success':'danger'" [value]="rol.estado?'Activo':'Inactivo'"></p-tag>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</p-card>

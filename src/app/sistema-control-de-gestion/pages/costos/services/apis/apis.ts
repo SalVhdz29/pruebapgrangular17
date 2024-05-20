@@ -1,0 +1,1 @@
+export const OBTENER_COSTOS = "gestioncostos/tabla/actividades/MANTENIMIENTO"

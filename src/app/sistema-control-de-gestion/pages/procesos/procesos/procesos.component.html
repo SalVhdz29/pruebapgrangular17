@@ -1,0 +1,129 @@
+<shared-loader [hidden]="!showProceso"></shared-loader>
+<p-card header="Procesos">
+
+    <p-dialog
+        header="Agregar proceso"
+        [(visible)]="showProcesoDialog"
+        [modal]="true"
+        [responsive]="true"
+        [style]="{ width: '600px', height: '500px' }"
+        [draggable]="false"
+        [resizable]="false"
+    >
+        <ng-template pTemplate="body">
+            <div class="p-fluid p-formgrid grid mt-2">
+                <div class="field col-12">
+                    <span class="p-float-label">
+                        <textarea
+                            rows="5"
+                            cols="30"
+                            pInputTextarea
+                            id="descripcion"
+                            [(ngModel)]="descripcionProceso"
+                        ></textarea>
+                        <label for="descripcion" class="mb-2"
+                            >Nombre del proceso
+                            <small style="color: red"><b> *</b></small></label
+                        >
+                        <!-- <input [(ngModel)]="nombreUsuarioIngresado" id="nombreUsarioInput" type="text" #nombreUsarioInput
+                            required pInputText /> -->
+                        <!-- <label for="nombreUsarioInput" class="mb-2"
+                            >Nombre de usuario
+                            <small style="color: red"><b> *</b></small></label
+                        > -->
+                    </span>
+                    <small *ngIf="(descripcionProceso==null||descripcionProceso=='')&&formularioCompleto"
+                        style="color:red"><b>Favor ingresar un nombre válido</b></small>
+                </div>
+                <div class="field col-12">
+                    <span class="p-float-label">
+                        <input (keyup)="setCodigo(codigoProcesoInput.value)" id="codigoProcesoInput" type="text" #codigoProcesoInput
+                            required pInputText />
+                        <label for="codigoProcesoInput" class="mb-2"
+                            >Codigo proceso
+                            <small style="color: red"><b> *</b></small></label
+                        >
+                    </span>
+                    <small *ngIf="(codigoProceso==null ||codigoProceso== undefined)&&formularioCompleto"
+                        style="color:red"><b>Favor ingresar un código</b></small>
+                </div>
+                <div class="field col-12">
+                    <span class="p-float-label">
+                        <input (keyup)="setTiempo(tiempoMinutosInput.value)" id="tiempoMinutosInput" type="number" #tiempoMinutosInput
+                            required pInputText />
+                        <label for="tiempoMinutosInput" class="mb-2"
+                            >Limite de tiempo
+                            <small style="color: red"><b> *</b></small></label
+                        >
+                    </span>
+                    <small *ngIf="(tiempoMinutos==null ||tiempoMinutos== undefined)&&formularioCompleto"
+                        style="color:red"><b>Favor ingresar un limite de tiempo (en minutos)</b></small>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <p-button
+                icon="pi pi-save"
+                (click)="agregarProceso()"
+                label="Guardar"
+                severity="success"
+            ></p-button>
+            <p-button
+                icon="pi pi-times"
+                (click)="showDialog()"
+                label="Cancelar"
+                severity="danger"
+            ></p-button>
+        </ng-template>
+    </p-dialog>
+    <div class="grid">
+        <div class="col-12">
+            <p-button
+                (onClick)="showDialog()"
+                severity="success"
+                label="Agregar proceso"
+                icon="pi pi-plus"
+            ></p-button>
+        </div>
+        <div class="col-12">
+            <p-table
+                [value]="ProcesoList()"
+                [tableStyle]="{ 'min-width': '50rem' }"
+                [paginator]="true"
+                [rowsPerPageOptions]="[5, 10, 20]"
+                [rows]="10"
+                currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} procesos"
+                #ProcesosTable
+                [globalFilterFields]="['codigo', 'descripcion', 'tiempoMinutos']"
+            >
+            <ng-template pTemplate="caption">
+                <div class="flex">
+                    <button pButton label="Limpiar búsqueda" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(ProcesosTable)"></button>
+                    <span class="p-input-icon-left ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input #busquedaTabla pInputText type="text" (input)="ProcesosTable.filterGlobal(busquedaTabla.value, 'contains')" placeholder="Buscar" />
+                    </span>
+                </div>
+            </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre del proceso</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-proceso >
+                    <tr>
+                        <td>{{ proceso.codigo }}</td>
+                        <td>{{ proceso.descripcion }}</td>
+                        <td>
+                            <editar-proceso [idProceso]="proceso.id" (actualizarPadre)="obtenerProcesos()"></editar-proceso>
+                            &nbsp;
+                            <eliminar-proceso [idProceso]="proceso.id" (actualizarPadre)="obtenerProcesos()"></eliminar-proceso>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</p-card>

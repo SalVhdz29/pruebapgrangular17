@@ -1,0 +1,8 @@
+.custom-card {
+    width: 150px !important /* Puedes ajustar este valor según tus necesidades */
+}
+
+.th-spacing {
+    /*padding: 30px !important;*/
+    text-wrap: nowrap;
+}

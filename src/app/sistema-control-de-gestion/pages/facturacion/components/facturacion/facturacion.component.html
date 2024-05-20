@@ -1,0 +1,162 @@
+<shared-loader [hidden]="!loadingFlg"></shared-loader>
+
+<h3>Facturacion</h3>
+<br />
+<p-card header="Productos">
+    <div class="grid">
+
+        <div class="col-12">
+          <p-table
+            [value]="productos()"
+            [tableStyle]="{ 'min-width': '50rem' }"
+            [paginator]="true"
+            [rowsPerPageOptions]="[5, 10, 20]"
+            [rows]="10"
+            currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} Productos"
+            #productosTbl
+            [globalFilterFields]="[
+                'title',
+                'price',
+                'category'
+            ]">
+
+            <ng-template pTemplate="caption">
+                <div class="flex">
+                    <button
+                        pButton
+                        label="Limpiar búsqueda"
+                        class="p-button-outlined"
+                        icon="pi pi-filter-slash"
+                        (click)="clear(productosTbl)"
+                    ></button>
+                    <span class="p-input-icon-left ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input
+                            #busquedaTabla
+                            pInputText
+                            type="text"
+                            (input)="
+                                productosTbl.filterGlobal(
+                                    busquedaTabla.value,
+                                    'contains'
+                                )
+                            "
+                            placeholder="Buscar"
+                        />
+                    </span>
+                </div>
+            </ng-template>
+
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Producto</th>
+                    <th colspan="2">Descripcion</th>
+                    <th>Precio</th>
+                    <th colspan="1">Operaciones</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-producto>
+                <tr *ngIf="comprobarProductoDetalle(producto)">
+                    <td>{{ producto.title }}</td>
+                    <td colspan="2">{{ producto.description }}</td>
+                    <td>{{ producto.price  | number:'1.2-2'  }}</td>
+                    <td>
+                        <p-button
+                            (onClick)="agregarDetalle(producto)"
+                            severity="primary"
+                            label=''
+                            icon="pi pi-plus"
+                        ></p-button>
+                    </td>
+                </tr>
+            </ng-template>
+          </p-table>
+        </div>
+    </div>
+</p-card>
+
+<p-card header="Detalles de Compra">
+    <div class="grid">
+        <div class="col-12">
+            <p-table
+            [value]="detalles"
+            [tableStyle]="{ 'min-width': '50rem' }"
+            [paginator]="true"
+            [rowsPerPageOptions]="[5, 10, 20]"
+            [rows]="10"
+            currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} Productos"
+            #detallesTbl
+            [globalFilterFields]="[
+                'title',
+                'price',
+                'category'
+            ]">
+
+                <ng-template pTemplate="caption">
+                    <div class="flex">
+                        <button
+                            pButton
+                            label="Limpiar búsqueda"
+                            class="p-button-outlined"
+                            icon="pi pi-filter-slash"
+                            (click)="clear(detallesTbl)"
+                        ></button>
+                        <span class="p-input-icon-left ml-auto">
+                            <i class="pi pi-search"></i>
+                            <input
+                                #busquedaTabla
+                                pInputText
+                                type="text"
+                                (input)="
+                                    detallesTbl.filterGlobal(
+                                        busquedaTabla.value,
+                                        'contains'
+                                    )
+                                "
+                                placeholder="Buscar"
+                            />
+                        </span>
+                    </div>
+                </ng-template>
+
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-detalle>
+                    <tr>
+                        <td>{{ detalle.title }}</td>
+                        <td>{{ detalle.price  | number:'1.2-2' }}</td>
+                        <td>
+                            <input type="number" pInputText [(ngModel)]="detalle.cantidad" />
+                        </td>
+                        <td>{{ detalle.cantidad * detalle.price | number:'1.2-2' }}</td>
+                        <td>
+                            <p-button
+                                (onClick)="eliminarDetalle(detalle)"
+                                severity="danger"
+                                label=''
+                                icon="pi pi-trash"
+                            ></p-button>
+                        </td>
+                    </tr>
+                </ng-template>
+
+            </p-table>
+        </div>
+        <div class=" ml-5 p-col-6">
+            <h4>Cantidad: {{ totalProductos('cantidad') }}</h4>
+        </div>
+        <div class=" ml-5 p-col-6">
+            <h4>Total: {{ totalProductos('') | number:'1.2-2'}}</h4>
+        </div>
+
+    </div>
+</p-card>

@@ -1,0 +1,26 @@
+<p-card header="Detalles">
+  <div class="grid">
+    <div class="col-12 md:col-6" style="overflow-x: scroll">
+      <table class="p-table">
+        <thead>
+          <tr>
+            <th *ngFor="let header of headers, let index">{{ header }}
+                <p-button *ngIf="index!=''&&header==='Raiz e Hipoteca'" icon="pi pi-eye" [rounded]="true" [text]="true" [pTooltip]="tooltipContent"  pTooltip="Guardar proyecto">
+                    <ng-template #tooltipContent>
+                        <div class="flex align-items-center"><span> Ver detalles </span>
+                        </div>
+                    </ng-template>
+                </p-button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of datosPorDepartamento; let i = index">
+            <th>{{ departamentos[i] }}</th>
+            <td *ngFor="let cell of row">{{ cell }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</p-card>

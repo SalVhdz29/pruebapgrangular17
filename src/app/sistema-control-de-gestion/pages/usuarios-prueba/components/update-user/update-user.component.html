@@ -1,0 +1,91 @@
+<!-- <p-button
+    pTooltip="Actualizar Usuario"
+    icon="pi pi-pencil" severity="warning"
+    (onClick)="showDialog.set(!showDialog())"
+    [disabled]="usuario!=null?false:true"/> -->
+
+<p-dialog
+        header="Actualizar Usuario"
+        [(visible)]="showDialog"
+        [modal]="true"
+        [responsive]="true"
+        [style]="{ width: '800px', height: '600px' }"
+        [draggable]="false"
+        [resizable]="false"
+>
+    <ng-template pTemplate="body">
+        <div class="p-fluid p-formgrid grid mt-2">
+
+            <div class="field col-12">
+                <!-- <p-dropdown
+                    id="categoryDrop"
+                    #categoryDrop
+                    [options]="categoryList()"
+                    optionLabel="Categoria"
+                    [showClear]="true"
+                    placeholder="Seleccione una categoria"
+                    [(ngModel)]="categoryChoose"
+                    [style]="{ 'min-width': '500px' }"
+                >
+                </p-dropdown> -->
+                <p-dropdown
+                    id="categoryDrop"
+                    #categoryDrop
+                    [options]="categoryList()"
+                    [showClear]="true"
+                    placeholder="Seleccione una categoria"
+                    [(ngModel)]="categoryChoose"
+                    [style]="{ 'min-width': '500px' }"
+                >
+                </p-dropdown>
+                <small
+                    *ngIf="
+                        (categoryChoose == null ||
+                        categoryChoose == undefined)
+                    "
+                    style="color: red"
+                    ><b>Favor seleccione una categoria</b></small
+                >
+            </div>
+
+            <div class="field col-12 md:col-6">
+                <span class="p-float-label">
+                    <input [(ngModel)]="nombre" id="nombreIpt" type="text" #nombreUsarioInput
+                        required pInputText />
+                    <label for="nombreUsarioInput" class="mb-2">Nombre <small style="color:red"><b>
+                                *</b></small></label>
+                </span>
+                <small *ngIf="(nombre==null||nombre=='')"
+                    style="color:red"><b>Favor ingresar un nombre</b></small>
+            </div>
+
+            <div class="field col-12 md:col-6">
+                <span class="p-float-label">
+                    <input [(ngModel)]="apellido" id="apellidoIpt" type="text" #apellidoUsuarioInput
+                        required pInputText />
+                    <label for="apellidoUsuarioInput" class="mb-2">Apellido <small style="color:red"><b>
+                                *</b></small></label>
+                </span>
+                <small *ngIf="(nombre==null||nombre=='')"
+                    style="color:red"><b>Favor ingresar un apellido</b></small>
+            </div>
+
+            <div class="field col-12 md:col-6">
+                <span class="p-float-label">
+                    <input [(ngModel)]="email" id="emailIpt" type="text" #emailIpt
+                        [disabled]="disableEmail"
+                        required pInputText />
+                    <label for="emailIpt" class="mb-2">Email <small style="color:red"><b>
+                                *</b></small></label>
+                </span>
+                <small *ngIf="(email==null||email=='')"
+                    style="color:red"><b>Favor ingresar un email</b></small>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-save" (click)="agregarUsuario()" label="Cargar" severity="success"></p-button>
+        <p-button icon="pi pi-times" (click)="actualizarPadre.emit()" label="cancelar" severity="danger"></p-button>
+    </ng-template>
+</p-dialog>

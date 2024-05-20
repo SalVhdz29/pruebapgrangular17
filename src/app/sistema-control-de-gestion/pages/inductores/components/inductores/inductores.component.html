@@ -1,0 +1,129 @@
+<shared-loader [hidden]="!showProceso"></shared-loader>
+<p-card header="Inductores">
+    <p-dialog
+        header="Agregar inductor"
+        [(visible)]="showInductoresDialog"
+        [modal]="true"
+        [responsive]="true"
+        [style]="{ width: '800px', height: '600px' }"
+        [draggable]="false"
+        [resizable]="false"
+    >
+        <ng-template pTemplate="body">
+            <div class="p-fluid p-formgrid grid mt-2">
+                <div class="field col-12">
+
+                </div>
+                <div class="field col-12">
+                    <span class="p-float-label">
+                        <textarea
+                            rows="5"
+                            cols="30"
+                            pInputTextarea
+                            id="descripcion"
+                            [(ngModel)]="descripcionInductor"
+                        ></textarea>
+                        <label for="descripcion" class="mb-2"
+                            >Nombre del inductor
+                            <small style="color: red"><b> *</b></small></label
+                        >
+                    </span>
+                    <small
+                        *ngIf="
+                            (descripcionInductor == null ||
+                            descripcionInductor == '' ||
+                            descripcionInductor == '') &&
+                            formularioCompleto
+                        "
+                        style="color: red"
+                        ><b>Favor ingresar un nombre</b></small
+                    >
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <p-button
+                icon="pi pi-save"
+                (click)="agregarInductor()"
+                label="Guardar"
+                severity="success"
+            ></p-button>
+            <p-button
+                icon="pi pi-times"
+                (click)="showDialog()"
+                label="Cancelar"
+                severity="danger"
+            ></p-button>
+        </ng-template>
+    </p-dialog>
+    <div class="grid">
+        <div class="col-12">
+            <p-button
+                (onClick)="showDialog()"
+                severity="success"
+                label="Agregar inductor"
+                icon="pi pi-plus"
+            ></p-button>
+        </div>
+        <div class="col-12">
+            <p-table
+                [value]="inductoresList"
+                [tableStyle]="{ 'min-width': '50rem' }"
+                [paginator]="true"
+                [rowsPerPageOptions]="[5, 10, 20]"
+                [rows]="10"
+                currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} inductores"
+                #inductoresTabla
+                [globalFilterFields]="[
+                    'actividad',
+                    'descripcion',
+                    'tiempoMinutos'
+                ]"
+            >
+                <ng-template pTemplate="caption">
+                    <div class="flex">
+                        <button
+                            pButton
+                            label="Limpiar búsqueda"
+                            class="p-button-outlined"
+                            icon="pi pi-filter-slash"
+                            (click)="clear(inductoresTabla)"
+                        ></button>
+                        <span class="p-input-icon-left ml-auto">
+                            <i class="pi pi-search"></i>
+                            <input
+                                #busquedaTabla
+                                pInputText
+                                type="text"
+                                (input)="
+                                    inductoresTabla.filterGlobal(
+                                        busquedaTabla.value,
+                                        'contains'
+                                    )
+                                "
+                                placeholder="Buscar"
+                            />
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Actividad</th>
+                        <th>Nombre del inductor</th>
+                        <th colspan="1">Operaciones</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-inductor>
+                    <tr>
+                        <td>{{ inductor.actividad }}</td>
+                        <td>{{ inductor.descripcion }}</td>
+                        <td>
+                            &nbsp;
+                            <eliminar-inductores  [idInductor]="inductor.id" (actualizarPadre)="obtenerInductores()"></eliminar-inductores>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</p-card>

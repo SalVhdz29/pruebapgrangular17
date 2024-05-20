@@ -1,0 +1,1 @@
+export const apiUrlEnv = "https://localhost:7116/api"

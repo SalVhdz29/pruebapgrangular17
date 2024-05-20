@@ -1,0 +1,57 @@
+<p-button pTooltip="Editar inductor" icon="pi pi-pencil" severity="success" (onClick)="showDialog()" [disabled]="idInductor!=null?false:true"/>
+<p-dialog
+        header="Actualizar inductor"
+        [(visible)]="showInductoresDialog"
+        [modal]="true"
+        [responsive]="true"
+        [style]="{ width: '800px', height: '600px' }"
+        [draggable]="false"
+        [resizable]="false"
+    >
+        <ng-template pTemplate="body">
+            <div class="p-fluid p-formgrid grid mt-2">
+                <div class="field col-12">
+                    
+                </div>
+                <div class="field col-12">
+                    <span class="p-float-label">
+                        <textarea
+                            rows="5"
+                            cols="30"
+                            pInputTextarea
+                            id="descripcion"
+                            [(ngModel)]="descripcionInductor"
+                        ></textarea>
+                        <label for="descripcion" class="mb-2"
+                            >Descripción
+                            <small style="color: red"><b> *</b></small></label
+                        >
+                    </span>
+                    <small
+                        *ngIf="
+                            (descripcionInductor == null ||
+                            descripcionInductor == '' ||
+                            descripcionInductor == '') &&
+                            formularioCompleto
+                        "
+                        style="color: red"
+                        ><b>Favor ingresar una descripción</b></small
+                    >
+                </div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <p-button
+                icon="pi pi-save"
+                (click)="actualizarInductor()"
+                label="Guardar"
+                severity="success"
+            ></p-button>
+            <p-button
+                icon="pi pi-times"
+                (click)="showDialog()"
+                label="Cancelar"
+                severity="danger"
+            ></p-button>
+        </ng-template>
+    </p-dialog>

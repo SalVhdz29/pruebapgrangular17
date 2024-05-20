@@ -1,0 +1,52 @@
+<p-dialog
+        header="Crear Empresa"
+        [(visible)]="showDialog"
+        [modal]="true"
+        [responsive]="true"
+        [style]="{ width: '800px', height: '600px' }"
+        [draggable]="false"
+        [resizable]="false"
+>
+<ng-template pTemplate="body">
+    <div class="p-fluid p-formgrid grid mt-2">
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <input [(ngModel)]="nombre" id="nombreIpt" type="text" #nombreEmpresaIpt
+                    required pInputText />
+                <label for="nombreEmpresaIpt" class="mb-2">Nombre <small style="color:red"><b>
+                            *</b></small></label>
+            </span>
+            <small *ngIf="(nombre==null||nombre=='')"
+                style="color:red"><b>Favor ingresar el nombre de la empresa</b></small>
+        </div>
+
+        <div class="field col-12 md:col-6">
+            <span class="p-float-label">
+                <input [(ngModel)]="telefono" id="telefonoIpt" type="text" #telefonoEmpresaIpt
+                    required pInputText />
+                <label for="telefonoEmpresaIpt" class="mb-2">Teléfono <small style="color:red"><b>
+                            *</b></small></label>
+            </span>
+            <small *ngIf="(direccion==null||direccion=='')"
+                style="color:red"><b>Favor ingresar el teléfono de la empresa</b></small>
+        </div>
+
+        <div class="field col-12">
+            <span class="p-float-label">
+                <input [(ngModel)]="direccion" id="direccionIpt" type="text" #direccionEmpresaIpt
+                    required pInputText />
+                <label for="direccionEmpresaIpt" class="mb-2">Dirección <small style="color:red"><b>
+                            *</b></small></label>
+            </span>
+            <small *ngIf="(direccion==null||direccion=='')"
+                style="color:red"><b>Favor ingresar la dirección de la empresa</b></small>
+        </div>
+
+        
+    </div>
+</ng-template>
+<ng-template pTemplate="footer">
+    <p-button icon="pi pi-save" (click)="agregarEmpresa()" label="Crear" severity="success"></p-button>
+    <p-button icon="pi pi-times" (click)="resetFlgs.emit()" label="cancelar" severity="danger"></p-button>
+</ng-template>
+</p-dialog>

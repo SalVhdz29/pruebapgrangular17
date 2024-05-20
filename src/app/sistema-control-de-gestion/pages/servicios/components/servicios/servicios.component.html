@@ -1,0 +1,225 @@
+<shared-loader [hidden]="!showProceso"></shared-loader>
+<p-card header="Servicios" [hidden]="showProceso">
+    <p-dialog
+        header="Agregar servicio"
+        [(visible)]="showServicioDialog"
+        [modal]="true"
+        [responsive]="true"
+        [style]="{ width: '800px', height: '600px' }"
+        [draggable]="false"
+        [resizable]="false"
+    >
+        <ng-template pTemplate="body">
+            <div class="p-fluid p-formgrid grid mt-2">
+                <div class="field col-12">
+                    <p-dropdown
+                        id="procesoDrop"
+                        #procesoDrop
+                        [options]="ProcesoList()"
+                        optionLabel="descripcion"
+                        [showClear]="true"
+                        placeholder="Seleccione el proceso"
+                        [ngModel]="ProcesoSeleccionado"
+                        (onChange)="setProceso($event.value)"
+                        [style]="{ 'min-width': '500px' }"
+                    ></p-dropdown>
+                </div>
+                <div class="field col-12">
+                    <span class="p-float-label">
+                        <textarea
+                            rows="5"
+                            cols="30"
+                            pInputTextarea
+                            id="descripcion"
+                            [(ngModel)]="descripcionServicio"
+                        ></textarea>
+                        <label for="descripcion" class="mb-2"
+                            >Descripción del servicio
+                            <small style="color: red"><b> *</b></small></label
+                        >
+                    </span>
+                    <small
+                        *ngIf="
+                            (descripcionServicio == null ||
+                            descripcionServicio == '') &&
+                            formularioCompleto
+                        "
+                        style="color: red"
+                        ><b>Favor ingresar un nombre válido</b></small
+                    >
+                </div>
+                <!-- <div class="field col-12">
+                    <span class="p-float-label">
+                        <input
+                            (keyup)="setCodigo(codigoActividadInput.value)"
+                            id="codigoActividadInput"
+                            type="text"
+                            #codigoActividadInput
+                            required
+                            pInputText
+                        />
+                        <label for="codigoActividadInput" class="mb-2"
+                            >Codigo proceso
+                            <small style="color: red"><b> *</b></small>
+                            </label
+                        >
+                    </span>
+                    <small
+                        *ngIf="
+                            (codigoActividad == null ||
+                                codigoActividad == undefined ||
+                                codigoActividad == '') &&
+                            formularioCompleto
+                        "
+                        style="color: red"
+                        ><b>Favor ingresar un código</b></small
+                    > 
+                </div>
+                <div class="field col-12">
+                    <span class="p-float-label">
+                        <input
+                            (keyup)="setCargo(cargoActividadInput.value)"
+                            id="cargoActividadInput"
+                            type="text"
+                            #cargoActividadInput
+                            required
+                            pInputText
+                        />
+                        <label for="cargoActividadInput" class="mb-2"
+                            >Puesto de trabajo
+                             <small style="color: red"><b> *</b></small></label 
+                            </label>
+                    </span>
+                    <small
+                        *ngIf="
+                            (cargoActividad == null ||
+                                cargoActividad == undefined ||
+                                cargoActividad == '') &&
+                            formularioCompleto
+                        "
+                        style="color: red"
+                        ><b>Favor ingresar un código</b></small
+                    > 
+                </div>
+                <div class="field col-12">
+                    <span class="p-float-label">
+                        <input
+                            (keyup)="setTiempo(tiempoMinutosInput.value)"
+                            id="tiempoMinutosInput"
+                            type="number"
+                            #tiempoMinutosInput
+                            required
+                            pInputText
+                        />
+                        <label for="tiempoMinutosInput" class="mb-2"
+                            >Tiempo de la actividad
+                            <small style="color: red"><b> *</b></small></label
+                        >
+                    </span>
+                    <small
+                        *ngIf="
+                            (tiempoMinutos == null ||
+                                tiempoMinutos == undefined ||
+                                tiempoMinutos == '') &&
+                            formularioCompleto
+                        "
+                        style="color: red"
+                        ><b
+                            >Favor ingresar un limite de tiempo (en minutos)</b
+                        ></small
+                    >
+                </div> -->
+            </div>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <p-button
+                icon="pi pi-save"
+                (click)="agregarServicio()"
+                label="Guardar"
+                severity="success"
+            ></p-button>
+            <p-button
+                icon="pi pi-times"
+                (click)="cancelarServicio()"
+                label="Cancelar"
+                severity="danger"
+            ></p-button>
+        </ng-template>
+    </p-dialog>
+
+    <div class="grid">
+        <div class="col-12">
+            <p-button
+                (onClick)="showDialog()"
+                severity="success"
+                label="Agregar servicio"
+                icon="pi pi-plus"
+            ></p-button>
+        </div>
+        <div class="col-12">
+            <p-table
+                [value]="serviciosList()"
+                [tableStyle]="{ 'min-width': '50rem' }"
+                [paginator]="true"
+                [rowsPerPageOptions]="[5, 10, 20]"
+                [rows]="10"
+                currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} servicios"
+                #serviciosTabla
+                [globalFilterFields]="[
+                    'proceso',
+                    'descripcion',
+                    'misional'
+                ]"
+            >
+                <ng-template pTemplate="caption">
+                    <div class="flex">
+                        <button
+                            pButton
+                            label="Limpiar búsqueda"
+                            class="p-button-outlined"
+                            icon="pi pi-filter-slash"
+                            (click)="clear(serviciosTabla)"
+                        ></button>
+                        <span class="p-input-icon-left ml-auto">
+                            <i class="pi pi-search"></i>
+                            <input
+                                #busquedaTabla
+                                pInputText
+                                type="text"
+                                (input)="
+                                    serviciosTabla.filterGlobal(
+                                        busquedaTabla.value,
+                                        'contains'
+                                    )
+                                "
+                                placeholder="Buscar"
+                            />
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Misional</th>
+                        <th>Proceso</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-servicio>
+                    <tr>
+                        <td>{{ servicio.descripcion }}</td>
+                        <td>{{ servicio.misional }}</td>
+                        <td>{{ servicio.proceso}}</td>
+                        <td>
+                            <p-button pTooltip="Editar servicio" icon="pi pi-pencil" severity="success"/>
+                            <!-- <editar-actividad [idActividad]="actividad.id" (actualizarPadre)="obtenerActividades()"></editar-actividad>
+                            &nbsp;
+                            <eliminar-actividad  [idActividad]="actividad.id" (actualizarPadre)="obtenerActividades()"></eliminar-actividad> -->
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</p-card>
+
