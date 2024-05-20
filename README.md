@@ -7,3 +7,6 @@ LOGIN:
 solo dar click al boton
 
 NODE: 18.13.0
+
+QUERY:
+QUERY EMPRESAS.sql en la raiz del proyecto
